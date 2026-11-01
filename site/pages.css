@@ -1,0 +1,35 @@
+/* RedTree IoT · extra styles for the landing pages (loaded after styles.css) */
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; font-size: var(--small); font-weight: 500; color: var(--muted); }
+.crumbs a { color: var(--red-dark); }
+.crumbs a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.page .hero h1 { font-size: clamp(2.125rem, 1.5rem + 2.8vw, 3.5rem); }
+.photo-note { margin-top: 10px; font-size: 0.8125rem; color: var(--muted); }
+
+.services.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grey .card { background: #fff; }
+.section:not(.grey):not(.tint) .card { background: var(--grey); }
+.tint .courses { max-width: 760px; }
+
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: start; }
+.split-img img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--r-lg); }
+.prose { display: grid; gap: 18px; font-size: var(--lead); }
+.prose p { max-width: 60ch; }
+.ticks { display: grid; gap: 10px; font-size: var(--body-size); }
+.ticks li { position: relative; padding-left: 30px; color: var(--ink); }
+.ticks li::before { content: ""; position: absolute; left: 4px; top: 0.45em; width: 12px; height: 7px; border-left: 2.5px solid var(--red); border-bottom: 2.5px solid var(--red); transform: rotate(-45deg); }
+
+.cta-act { display: flex; }
+.btn-white { background: #fff; color: var(--red-dark); white-space: normal; text-align: center; }
+.btn-white:hover { background: var(--tint); }
+
+@media (max-width: 1023px) {
+  .services.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .split { grid-template-columns: 1fr; }
+  .split-img { max-width: 720px; }
+}
+@media (max-width: 699px) {
+  .services.three { grid-template-columns: 1fr; }
+  .split-img img { aspect-ratio: 16 / 11; }
+  .cta-act .btn { width: 100%; }
+  .page .ctas .btn { white-space: normal; text-align: center; }
+}
