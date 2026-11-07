@@ -1,5 +1,5 @@
 // RedTree IoT · language, menu, live monitor, WhatsApp message builder (ES module)
-import { initMonitor } from './monitor.js';
+import { initEstate } from './estate.js';
 
 const WA = 'https://wa.me/6282272226678';
 const root = document.documentElement;
@@ -86,9 +86,9 @@ if (navBar && sentinel && 'IntersectionObserver' in window) {
     { threshold: [0, 1], rootMargin: '-1px 0px 0px 0px' }).observe(sentinel);
 }
 
-// Live monitor in the hero: must exist before the first setLang so it renders in the right language
-const monitorEl = document.querySelector('[data-monitor]');
-if (monitorEl) initMonitor(monitorEl, t);
+// Estate map in the hero: set up before the first setLang so it renders in the right language
+const estateEl = document.querySelector('[data-estate]');
+if (estateEl) initEstate(estateEl, t);
 
 setLang(root.getAttribute('data-lang-pending') === 'en' ? 'en' : 'id');
 document.querySelector('.lang')?.addEventListener('click', () => setLang(root.lang === 'id' ? 'en' : 'id'));

@@ -192,36 +192,79 @@
           </div>
           <ul class="meta"><li><a href="tel:+6282272226678">+62 822-7222-6678</a></li><li data-i18n="hero.card1">Harga bisa dinego</li></ul>
         </div>
-        <div class="monitor" data-monitor>
-          <div class="mon-top">
-            <p class="mon-title"><span class="live-dot" aria-hidden="true"></span><span data-i18n="mon.title">Contoh tampilan dashboard</span></p>
-            <div class="mon-tabs" role="group" aria-label="Pilih lokasi" data-i18n-arialabel="mon.pick">
-              <button type="button" aria-pressed="true" data-scene="kebun" data-i18n="sec.1">Perkebunan</button>
-              <button type="button" aria-pressed="false" data-scene="pabrik" data-i18n="sec.2">Pabrik sawit</button>
-              <button type="button" aria-pressed="false" data-scene="gedung" data-i18n="sec.4">Gedung</button>
+        <figure class="estate" data-estate>
+          <div class="estate-bar">
+            <div class="estate-tabs" role="group" aria-label="Pilih cerita" data-i18n-arialabel="map.pick">
+              <button type="button" aria-pressed="true" data-story="hujan" data-i18n="map.s.hujan">Hujan deras</button>
+              <button type="button" aria-pressed="false" data-story="kemarau" data-i18n="map.s.kemarau">Kemarau</button>
+              <button type="button" aria-pressed="false" data-story="tangki" data-i18n="map.s.tangki">Tangki pabrik</button>
+            </div>
+            <button type="button" class="estate-play" aria-pressed="false">Jeda</button>
+          </div>
+          <div class="estate-stage">
+            <svg class="estate-map" viewBox="0 0 640 440" role="img" aria-labelledby="estate-desc">
+              <desc id="estate-desc" data-i18n="map.desc">Peta ilustrasi kebun sawit dengan parit, pabrik, sensor dan gateway. Sensor mengirim data ke HP saat ada kondisi yang perlu ditangani.</desc>
+              <defs>
+                <pattern id="palms" width="14" height="12" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="3.3"/><circle cx="11" cy="10" r="3.3"/></pattern>
+                <pattern id="rainpat" width="16" height="24" patternUnits="userSpaceOnUse"><path d="M10 2 L6 12 M4 14 L1 21"/></pattern>
+                <clipPath id="estate-clip"><rect x="20" y="20" width="450" height="400" rx="10"/></clipPath>
+              </defs>
+              <rect class="ground" width="640" height="440"/>
+              <g class="blocks">
+                <rect x="30" y="30" width="130" height="170" rx="6"/><rect x="180" y="30" width="130" height="170" rx="6"/><rect x="330" y="30" width="130" height="170" rx="6"/>
+                <rect x="30" y="230" width="130" height="180" rx="6"/><rect class="block-soil" x="180" y="230" width="130" height="180" rx="6"/><rect x="330" y="230" width="130" height="180" rx="6"/>
+              </g>
+              <rect class="dry" x="180" y="230" width="130" height="180" rx="6"/>
+              <g class="palms">
+                <rect x="30" y="30" width="130" height="170"/><rect x="180" y="30" width="130" height="170"/><rect x="330" y="30" width="130" height="170"/>
+                <rect x="30" y="230" width="130" height="180"/><rect x="180" y="230" width="130" height="180"/><rect x="330" y="230" width="130" height="180"/>
+              </g>
+              <rect class="canal-bed" x="20" y="203" width="452" height="24" rx="4"/>
+              <rect class="canal-water" x="20" y="215" width="452" height="12" rx="3"/>
+              <g class="roads"><rect x="162" y="20" width="16" height="400"/><rect x="312" y="20" width="16" height="400"/><rect x="480" y="20" width="16" height="400"/></g>
+              <g class="block-names"><text x="44" y="50">A1</text><text x="194" y="50">A2</text><text x="344" y="50">A3</text><text x="44" y="250">B1</text><text x="194" y="250">B2</text><text x="344" y="250">B3</text></g>
+              <g class="gate"><rect x="462" y="200" width="10" height="30" rx="2"/><rect class="gate-door" x="463" y="203" width="8" height="24" rx="1"/></g>
+              <text class="lbl" x="440" y="245" text-anchor="end" data-i18n="map.gate">Pintu air</text>
+              <g class="mill">
+                <rect x="508" y="36" width="76" height="56" rx="4"/><path d="M508 54h76M528 36v56M556 36v56"/>
+                <circle class="chimney" cx="600" cy="48" r="7"/>
+                <circle class="smoke" cx="600" cy="40" r="5"/><circle class="smoke s2" cx="600" cy="40" r="5"/>
+                <circle cx="535" cy="150" r="22"/><circle cx="590" cy="150" r="22"/>
+                <rect class="tank-bed" x="618" y="128" width="8" height="44" rx="3"/><rect class="tank-level" x="618" y="150" width="8" height="22" rx="3"/>
+              </g>
+              <text class="lbl" x="546" y="112" text-anchor="middle" data-i18n="map.mill">Pabrik</text>
+              <g class="tower"><path d="M548 290 L540 252 M548 290 L556 252 M541 262h14M543 274h10"/><circle cx="548" cy="248" r="4"/><path class="waves" d="M538 238a14 14 0 0 1 20 0M533 232a21 21 0 0 1 30 0"/></g>
+              <text class="lbl" x="548" y="306" text-anchor="middle">Gateway</text>
+              <g class="station"><path d="M95 112 V84 M86 84h18"/><rect x="88" y="70" width="14" height="10" rx="2"/></g>
+              <text class="lbl" x="95" y="128" text-anchor="middle" data-i18n="map.station">Stasiun cuaca</text>
+              <g class="rain" clip-path="url(#estate-clip)"><rect class="rain-sheet" x="0" y="-24" width="640" height="490"/></g>
+              <rect class="sun" width="640" height="440"/>
+              <g class="links">
+                <path id="pk-rain" d="M95 84 C 260 40, 470 140, 548 248"/>
+                <path id="pk-canal" d="M250 215 Q 420 170 548 248"/>
+                <path id="pk-soil" d="M245 320 Q 420 330 548 248"/>
+                <path id="pk-tank" d="M590 150 Q 600 210 548 248"/>
+                <path id="pk-up" d="M548 248 Q 600 330 590 440"/>
+              </g>
+              <g class="packets"></g>
+              <g class="sensor" data-sensor="rain"><circle class="ring" cx="95" cy="84" r="9"/><circle cx="95" cy="84" r="4.5"/></g>
+              <g class="sensor" data-sensor="canal"><circle class="ring" cx="250" cy="215" r="9"/><circle cx="250" cy="215" r="4.5"/></g>
+              <g class="sensor" data-sensor="soil"><circle class="ring" cx="245" cy="320" r="9"/><circle cx="245" cy="320" r="4.5"/></g>
+              <g class="sensor" data-sensor="tank"><circle class="ring" cx="590" cy="150" r="9"/><circle cx="590" cy="150" r="4.5"/></g>
+              <g class="callout" data-callout="rain" transform="translate(95 56)"><rect x="-34" y="-13" width="68" height="22" rx="11"/><text y="3" text-anchor="middle"></text></g>
+              <g class="callout" data-callout="canal" transform="translate(250 188)"><rect x="-34" y="-13" width="68" height="22" rx="11"/><text y="3" text-anchor="middle"></text></g>
+              <g class="callout" data-callout="soil" transform="translate(245 294)"><rect x="-34" y="-13" width="68" height="22" rx="11"/><text y="3" text-anchor="middle"></text></g>
+              <g class="callout" data-callout="tank" transform="translate(590 194)"><rect x="-34" y="-13" width="68" height="22" rx="11"/><text y="3" text-anchor="middle"></text></g>
+            </svg>
+            <div class="phone" aria-live="polite">
+              <p class="phone-head"><span class="live-dot" aria-hidden="true"></span><span data-i18n="map.phone">HP mandor</span></p>
+              <div class="note note-alarm"><strong></strong><span></span></div>
+              <div class="note note-act"><strong data-i18n="map.done">Tindakan</strong><span></span></div>
             </div>
           </div>
-          <svg class="mon-map" viewBox="0 0 360 200" aria-hidden="true">
-            <g class="mon-links">
-              <path id="ml0" d="M120 28 C 180 28, 190 100, 240 100"/>
-              <path id="ml1" d="M120 76 C 180 76, 200 100, 240 100"/>
-              <path id="ml2" d="M120 124 C 180 124, 200 100, 240 100"/>
-              <path id="ml3" d="M120 172 C 180 172, 190 100, 240 100"/>
-              <path id="ml4" class="mon-up" d="M240 100 L 318 100"/>
-            </g>
-            <g class="mon-packets"></g>
-            <g class="mon-nodes">
-              <g class="node" data-node="0"><circle class="halo" cx="120" cy="28" r="13"/><circle cx="120" cy="28" r="6"/><text x="104" y="32" text-anchor="end"></text></g>
-              <g class="node" data-node="1"><circle class="halo" cx="120" cy="76" r="13"/><circle cx="120" cy="76" r="6"/><text x="104" y="80" text-anchor="end"></text></g>
-              <g class="node" data-node="2"><circle class="halo" cx="120" cy="124" r="13"/><circle cx="120" cy="124" r="6"/><text x="104" y="128" text-anchor="end"></text></g>
-              <g class="node" data-node="3"><circle class="halo" cx="120" cy="172" r="13"/><circle cx="120" cy="172" r="6"/><text x="104" y="176" text-anchor="end"></text></g>
-            </g>
-            <g class="mon-hub"><rect x="226" y="86" width="28" height="28" rx="8"/><path d="M233 104a10 10 0 0 1 14 0M236 100.5a5 5 0 0 1 8 0"/><text x="240" y="134" text-anchor="middle" data-mon="gw">Gateway</text></g>
-            <g class="mon-hub"><rect x="318" y="84" width="34" height="32" rx="6"/><path d="M324 108l6-7 5 4 9-11"/><text x="335" y="134" text-anchor="middle" data-mon="db">Dashboard</text></g>
-          </svg>
-          <ul class="mon-read"></ul>
-          <p class="mon-note" data-i18n="mon.note">Data simulasi untuk ilustrasi, bukan data pelanggan.</p>
-        </div>
+          <ol class="story-steps"><li></li><li></li><li></li><li></li><li></li></ol>
+          <figcaption class="estate-note" data-i18n="map.note">Simulasi untuk ilustrasi: peta, nama blok dan angka bukan data kebun nyata.</figcaption>
+        </figure>
       </div>
     </section>
 
