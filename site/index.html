@@ -164,7 +164,7 @@
       </a>
       <nav class="links" id="site-nav" aria-label="Utama" data-i18n-arialabel="a.main">
         <a href="#layanan" data-i18n="nav.services">Layanan</a>
-        <a href="#portofolio" data-i18n="nav.portfolio">Portofolio</a>
+        <a href="#portofolio" data-i18n="nav.portfolio">Contoh sistem</a>
         <a href="#pelatihan" data-i18n="nav.training">Pelatihan</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
         <a href="#kontak" data-i18n="nav.contact">Kontak</a>
@@ -183,32 +183,98 @@
   <main id="main">
     <section class="hero" id="top">
       <div class="wrap hero-in">
-        <div class="hero-text" data-reveal>
+        <div class="hero-text">
           <h1 data-i18n="hero.h1">IoT &amp; otomasi yang bekerja di lapangan.</h1>
           <p class="lead" data-i18n="hero.p">Solusi, pelatihan, dan konsultasi IoT &amp; otomasi untuk perkebunan, pabrik sawit, gedung, dan sekolah di Medan.</p>
           <div class="ctas">
             <a class="btn btn-red" href="https://wa.me/6282272226678" target="_blank" rel="noopener"><svg width="20" height="20" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="nav.wa">Chat WhatsApp</span></a>
             <a class="btn btn-tint" href="#layanan" data-i18n="hero.cta2">Lihat layanan</a>
           </div>
-          <p class="meta" data-i18n="hero.meta">+62 822-7222-6678 · Harga bisa dinego</p>
+          <ul class="meta"><li><a href="tel:+6282272226678">+62 822-7222-6678</a></li><li data-i18n="hero.card1">Harga bisa dinego</li></ul>
         </div>
-        <div class="hero-media" data-reveal>
-          <img src="assets/district-kunak-sabah-ioi-baturong-palm-oil.jpg" width="1600" height="1067" alt="Kebun kelapa sawit membentang sampai ke perbukitan, dengan pabrik kelapa sawit di tengahnya" data-i18n-alt="img.hero" fetchpriority="high">
-          <div class="price-card">
-            <strong data-i18n="hero.card1">Harga bisa dinego</strong>
-            <span data-i18n="hero.card2">Chat untuk penawaran khusus</span>
+        <figure class="estate" data-estate>
+          <div class="estate-bar">
+            <div class="estate-tabs" role="group" aria-label="Pilih cerita" data-i18n-arialabel="map.pick">
+              <button type="button" aria-pressed="true" data-story="hujan" data-i18n="map.s.hujan">Hujan deras</button>
+              <button type="button" aria-pressed="false" data-story="kemarau" data-i18n="map.s.kemarau">Kemarau</button>
+              <button type="button" aria-pressed="false" data-story="tangki" data-i18n="map.s.tangki">Tangki pabrik</button>
+            </div>
+            <button type="button" class="estate-play" aria-pressed="false">Jeda</button>
           </div>
-        </div>
+          <div class="estate-stage">
+            <svg class="estate-map" viewBox="0 0 640 440" role="img" aria-labelledby="estate-desc">
+              <desc id="estate-desc" data-i18n="map.desc">Peta ilustrasi kebun sawit dengan parit, pabrik, sensor dan gateway. Sensor mengirim data ke HP saat ada kondisi yang perlu ditangani.</desc>
+              <defs>
+                <pattern id="palms" width="14" height="12" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="3.3"/><circle cx="11" cy="10" r="3.3"/></pattern>
+                <pattern id="rainpat" width="16" height="24" patternUnits="userSpaceOnUse"><path d="M10 2 L6 12 M4 14 L1 21"/></pattern>
+                <clipPath id="estate-clip"><rect x="20" y="20" width="450" height="400" rx="10"/></clipPath>
+              </defs>
+              <rect class="ground" width="640" height="440"/>
+              <g class="blocks">
+                <rect x="30" y="30" width="130" height="170" rx="6"/><rect x="180" y="30" width="130" height="170" rx="6"/><rect x="330" y="30" width="130" height="170" rx="6"/>
+                <rect x="30" y="230" width="130" height="180" rx="6"/><rect class="block-soil" x="180" y="230" width="130" height="180" rx="6"/><rect x="330" y="230" width="130" height="180" rx="6"/>
+              </g>
+              <rect class="dry" x="180" y="230" width="130" height="180" rx="6"/>
+              <g class="palms">
+                <rect x="30" y="30" width="130" height="170"/><rect x="180" y="30" width="130" height="170"/><rect x="330" y="30" width="130" height="170"/>
+                <rect x="30" y="230" width="130" height="180"/><rect x="180" y="230" width="130" height="180"/><rect x="330" y="230" width="130" height="180"/>
+              </g>
+              <rect class="canal-bed" x="20" y="203" width="452" height="24" rx="4"/>
+              <rect class="canal-water" x="20" y="215" width="452" height="12" rx="3"/>
+              <g class="roads"><rect x="162" y="20" width="16" height="400"/><rect x="312" y="20" width="16" height="400"/><rect x="480" y="20" width="16" height="400"/></g>
+              <g class="block-names"><text x="44" y="50">A1</text><text x="194" y="50">A2</text><text x="344" y="50">A3</text><text x="44" y="250">B1</text><text x="194" y="250">B2</text><text x="344" y="250">B3</text></g>
+              <g class="gate"><rect x="462" y="200" width="10" height="30" rx="2"/><rect class="gate-door" x="463" y="203" width="8" height="24" rx="1"/></g>
+              <text class="lbl" x="440" y="245" text-anchor="end" data-i18n="map.gate">Pintu air</text>
+              <g class="mill">
+                <rect x="508" y="36" width="76" height="56" rx="4"/><path d="M508 54h76M528 36v56M556 36v56"/>
+                <circle class="chimney" cx="600" cy="48" r="7"/>
+                <circle class="smoke" cx="600" cy="40" r="5"/><circle class="smoke s2" cx="600" cy="40" r="5"/>
+                <circle cx="535" cy="150" r="22"/><circle cx="590" cy="150" r="22"/>
+                <rect class="tank-bed" x="618" y="128" width="8" height="44" rx="3"/><rect class="tank-level" x="618" y="150" width="8" height="22" rx="3"/>
+              </g>
+              <text class="lbl" x="546" y="112" text-anchor="middle" data-i18n="map.mill">Pabrik</text>
+              <g class="tower"><path d="M548 290 L540 252 M548 290 L556 252 M541 262h14M543 274h10"/><circle cx="548" cy="248" r="4"/><path class="waves" d="M538 238a14 14 0 0 1 20 0M533 232a21 21 0 0 1 30 0"/></g>
+              <text class="lbl" x="548" y="306" text-anchor="middle">Gateway</text>
+              <g class="station"><path d="M95 112 V84 M86 84h18"/><rect x="88" y="70" width="14" height="10" rx="2"/></g>
+              <text class="lbl" x="95" y="128" text-anchor="middle" data-i18n="map.station">Stasiun cuaca</text>
+              <g class="rain" clip-path="url(#estate-clip)"><rect class="rain-sheet" x="0" y="-24" width="640" height="490"/></g>
+              <rect class="sun" width="640" height="440"/>
+              <g class="links">
+                <path id="pk-rain" d="M95 84 C 260 40, 470 140, 548 248"/>
+                <path id="pk-canal" d="M250 215 Q 420 170 548 248"/>
+                <path id="pk-soil" d="M245 320 Q 420 330 548 248"/>
+                <path id="pk-tank" d="M590 150 Q 600 210 548 248"/>
+                <path id="pk-up" d="M548 248 Q 600 330 590 440"/>
+              </g>
+              <g class="packets"></g>
+              <g class="sensor" data-sensor="rain"><circle class="ring" cx="95" cy="84" r="9"/><circle cx="95" cy="84" r="4.5"/></g>
+              <g class="sensor" data-sensor="canal"><circle class="ring" cx="250" cy="215" r="9"/><circle cx="250" cy="215" r="4.5"/></g>
+              <g class="sensor" data-sensor="soil"><circle class="ring" cx="245" cy="320" r="9"/><circle cx="245" cy="320" r="4.5"/></g>
+              <g class="sensor" data-sensor="tank"><circle class="ring" cx="590" cy="150" r="9"/><circle cx="590" cy="150" r="4.5"/></g>
+              <g class="callout" data-callout="rain" transform="translate(95 56)"><rect x="-34" y="-13" width="68" height="22" rx="11"/><text y="3" text-anchor="middle"></text></g>
+              <g class="callout" data-callout="canal" transform="translate(250 188)"><rect x="-34" y="-13" width="68" height="22" rx="11"/><text y="3" text-anchor="middle"></text></g>
+              <g class="callout" data-callout="soil" transform="translate(245 294)"><rect x="-34" y="-13" width="68" height="22" rx="11"/><text y="3" text-anchor="middle"></text></g>
+              <g class="callout" data-callout="tank" transform="translate(590 194)"><rect x="-34" y="-13" width="68" height="22" rx="11"/><text y="3" text-anchor="middle"></text></g>
+            </svg>
+            <div class="phone" aria-live="polite">
+              <p class="phone-head"><span class="live-dot" aria-hidden="true"></span><span data-i18n="map.phone">HP mandor</span></p>
+              <div class="note note-alarm"><strong></strong><span></span></div>
+              <div class="note note-act"><strong data-i18n="map.done">Tindakan</strong><span></span></div>
+            </div>
+          </div>
+          <ol class="story-steps"><li></li><li></li><li></li><li></li><li></li></ol>
+          <figcaption class="estate-note" data-i18n="map.note">Simulasi untuk ilustrasi: peta, nama blok dan angka bukan data kebun nyata.</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="section" id="sektor" aria-labelledby="sektor-h">
       <div class="wrap">
-        <div class="head" data-reveal>
+        <div class="head">
           <h2 id="sektor-h" data-i18n="sec.h">Siapa yang kami bantu</h2>
           <p data-i18n="sec.p">Setiap lokasi punya pertanyaan yang sama: apa yang sedang terjadi, apa yang akan rusak, dan siapa yang bisa memperbaikinya.</p>
         </div>
-        <ul class="sectors" data-reveal>
+        <ul class="sectors">
           <li><img src="assets/oil-palm-plantation-in-rupit-north-musi.jpg" width="1600" height="900" alt="Barisan pohon sawit di tepi jalan di Sumatra" data-i18n-alt="img.s1" loading="lazy"><div><h3 data-i18n="sec.1">Perkebunan</h3><p data-i18n="sec.1p">Data cuaca, tanah, dan air dari blok-blok yang berjauhan.</p></div></li>
           <li><img src="assets/district-kunak-sabah-ioi-baturong-palm-oil.jpg" width="1600" height="1067" alt="Pabrik kelapa sawit di tengah kebun" data-i18n-alt="img.s2" loading="lazy" style="object-position:70% 60%"><div><h3 data-i18n="sec.2">Pabrik sawit</h3><p data-i18n="sec.2p">Mesin dan tangki dipantau 24 jam, dengan alarm dini.</p></div></li>
           <li><img src="assets/bma-automation-allen-bradley-plc-3.jpg" width="1600" height="1067" alt="Modul PLC di dalam panel kontrol" data-i18n-alt="img.s3" loading="lazy"><div><h3 data-i18n="sec.3">Pabrik</h3><p data-i18n="sec.3p">Panel kontrol andal dan data produksi digital.</p></div></li>
@@ -220,46 +286,47 @@
 
     <section class="section grey" id="layanan" aria-labelledby="layanan-h">
       <div class="wrap">
-        <div class="head" data-reveal>
+        <div class="head">
           <h2 id="layanan-h" data-i18n="svc.h">Layanan kami</h2>
           <p data-i18n="svc.p">Sensor mengukur, gateway mengirim, dashboard menampilkan, dan tim Anda bertindak. Kami membangun rangkaian itu dan melatih orang yang menjalankannya.</p>
         </div>
-        <div class="services" data-reveal>
+        <div class="services">
           <article class="card">
             <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a14 14 0 0 1 20 0"/><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1.2" fill="currentColor"/></svg></span>
             <h3 data-i18n="svc.1">Solusi IoT</h3>
             <p data-i18n="svc.1p">Sensor, gateway, dan dashboard yang menampilkan kondisi kebun, pabrik, atau gedung Anda secara langsung, dari mana saja.</p>
-            <p class="terms" data-i18n="svc.1t">Sensor tanah &amp; cuaca · Pemantauan jarak jauh · Dashboard real-time</p>
+            <p class="terms" data-i18n="svc.1t">Sensor tanah &amp; cuaca, pemantauan jarak jauh, dashboard real-time</p>
           </article>
           <article class="card">
             <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span>
             <h3 data-i18n="svc.2">Otomasi</h3>
             <p data-i18n="svc.2p">Panel kontrol dan logika yang menjalankan mesin dan proses dengan andal, dari satu pompa hingga satu lini produksi.</p>
-            <p class="terms" data-i18n="svc.2t">PLC &amp; HMI · Mikrokontroler · Retrofit panel</p>
+            <p class="terms" data-i18n="svc.2t">PLC &amp; HMI, mikrokontroler, retrofit panel</p>
           </article>
           <article class="card">
             <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8l10-5 10 5-10 5z"/><path d="M6 10.5V16c3 2.5 9 2.5 12 0v-5.5"/></svg></span>
             <h3 data-i18n="svc.3">Pelatihan</h3>
             <p data-i18n="svc.3p">Kursus praktik untuk tim, siswa, dan engineer, memakai perangkat asli yang bisa dipegang dan dirakit sendiri.</p>
-            <p class="terms" data-i18n="svc.3t">Pelatihan in-house · Workshop siswa · Upskilling engineer</p>
+            <p class="terms" data-i18n="svc.3t">Pelatihan in-house, workshop siswa, upskilling engineer</p>
           </article>
           <article class="card">
             <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span>
             <h3 data-i18n="svc.4">Konsultasi</h3>
             <p data-i18n="svc.4p">Pandangan dari luar sebelum Anda berinvestasi: analisis kebutuhan, desain sistem, dan pemilihan teknologi.</p>
-            <p class="terms" data-i18n="svc.4t">Analisis kebutuhan · Desain sistem · Pemilihan teknologi</p>
+            <p class="terms" data-i18n="svc.4t">Analisis kebutuhan, desain sistem, pemilihan teknologi</p>
           </article>
         </div>
+        <p class="more"><span data-i18n="more.label">Pelajari lebih lanjut:</span> <a class="text-link" href="jasa-iot-otomasi-medan/" data-i18n="more.iot">Jasa IoT &amp; otomasi PLC di Medan</a> <a class="text-link" href="monitoring-kebun-sawit/" data-i18n="more.palm">Monitoring kebun sawit dengan IoT</a></p>
       </div>
     </section>
 
     <section class="section" id="alur" aria-labelledby="alur-h">
       <div class="wrap">
-        <div class="head" data-reveal>
+        <div class="head">
           <h2 id="alur-h" data-i18n="flow.h">Dari sensor sampai keputusan</h2>
           <p data-i18n="flow.p">Begini cara sistem RedTree bekerja di lokasi Anda.</p>
         </div>
-        <ol class="flow" data-reveal>
+        <ol class="flow">
           <li><span class="num">1</span><h3 data-i18n="flow.1">Sensor mengukur</h3><p data-i18n="flow.1p">Suhu, kelembapan, level tangki, arus listrik, dan getaran mesin.</p></li>
           <li><span class="num">2</span><h3 data-i18n="flow.2">Gateway mengirim</h3><p data-i18n="flow.2p">Data dikirim dari lapangan lewat Wi-Fi atau jaringan seluler.</p></li>
           <li><span class="num">3</span><h3 data-i18n="flow.3">Dashboard menampilkan</h3><p data-i18n="flow.3p">Grafik dan alarm yang bisa dibuka dari HP atau komputer.</p></li>
@@ -270,14 +337,14 @@
 
     <section class="section grey" id="portofolio" aria-labelledby="portofolio-h">
       <div class="wrap">
-        <div class="head head-row" data-reveal>
+        <div class="head head-row">
           <div>
-            <h2 id="portofolio-h" data-i18n="pf.h">Portofolio</h2>
-            <p data-i18n="pf.p">Jenis sistem dan pelatihan yang kami tawarkan.</p>
+            <h2 id="portofolio-h" data-i18n="pf.h">Contoh sistem</h2>
+            <p data-i18n="pf.p">Jenis sistem dan pelatihan yang kami tawarkan. Foto ilustrasi dari Wikimedia Commons, bukan proyek RedTree.</p>
           </div>
           <a class="text-link" href="https://wa.me/6282272226678" target="_blank" rel="noopener" data-i18n="pf.ask">Tanya tentang proyek</a>
         </div>
-        <div class="works" data-reveal>
+        <div class="works">
           <figure><img src="assets/aws-automatic-weather-station.jpg" width="1200" height="1600" alt="Tiang stasiun cuaca otomatis dengan sensor dan panel surya di lahan berpagar" data-i18n-alt="img.w1" loading="lazy"><figcaption><span data-i18n="pf.1">Stasiun cuaca kebun</span><span class="cat">IoT</span></figcaption></figure>
           <figure><img src="assets/bma-automation-allen-bradley-plc-3.jpg" width="1600" height="1067" alt="Rak PLC dan kabel terminal di dalam panel kontrol" data-i18n-alt="img.w2" loading="lazy"><figcaption><span data-i18n="pf.2">Panel kontrol PLC</span><span class="cat" data-i18n="cat.auto">Otomasi</span></figcaption></figure>
           <figure><img src="assets/plc-displej.jpg" width="1600" height="1202" alt="Panel operator mesin dengan layar sentuh, tombol tekan, dan tombol darurat" data-i18n-alt="img.w3" loading="lazy"><figcaption><span data-i18n="pf.3">Panel operator HMI</span><span class="cat" data-i18n="cat.auto">Otomasi</span></figcaption></figure>
@@ -290,8 +357,8 @@
 
     <section class="section tint" id="pelatihan" aria-labelledby="pelatihan-h">
       <div class="wrap training">
-        <img class="training-img" src="assets/solder-workshop-at-fixme-hackerspace-renens-lausanne.jpg" width="1600" height="1063" alt="Peserta merakit rangkaian di meja kerja saat workshop elektronika" data-i18n-alt="img.t" loading="lazy" data-reveal>
-        <div class="training-text" data-reveal>
+        <img class="training-img" src="assets/solder-workshop-at-fixme-hackerspace-renens-lausanne.jpg" width="1600" height="1063" alt="Peserta merakit rangkaian di meja kerja saat workshop elektronika" data-i18n-alt="img.t" loading="lazy">
+        <div class="training-text">
           <h2 id="pelatihan-h" data-i18n="tr.h">Pelatihan</h2>
           <p data-i18n="tr.p">Jadwal kursus segera diumumkan. Chat kami untuk mendaftarkan minat Anda, atau memesan pelatihan untuk tim Anda sendiri.</p>
           <ul class="courses">
@@ -304,14 +371,15 @@
             <li><span data-i18n="tr.7">Pelatihan in-house untuk tim Anda</span><span class="badge" data-i18n="tr.req">Sesuai permintaan</span></li>
           </ul>
           <a class="btn btn-red" id="train-wa" href="https://wa.me/6282272226678" target="_blank" rel="noopener" data-i18n="tr.cta">Daftarkan minat via WhatsApp</a>
+          <p class="more"><span data-i18n="more.label">Pelajari lebih lanjut:</span> <a class="text-link" href="pelatihan-plc-iot-medan/" data-i18n="more.train">Pelatihan PLC &amp; kursus IoT di Medan</a></p>
         </div>
       </div>
     </section>
 
     <section class="section" id="proses" aria-labelledby="proses-h">
       <div class="wrap">
-        <div class="head" data-reveal><h2 id="proses-h" data-i18n="pr.h">Cara kami bekerja</h2></div>
-        <ol class="steps" data-reveal>
+        <div class="head"><h2 id="proses-h" data-i18n="pr.h">Cara kami bekerja</h2></div>
+        <ol class="steps">
           <li><span class="num num-l">1</span><h3 data-i18n="pr.1">Chat kami</h3><p data-i18n="pr.1p">Kirim WhatsApp ke <span class="nw">+62 822-7222-6678</span> dengan satu kalimat tentang kebutuhan Anda.</p></li>
           <li><span class="num num-l">2</span><h3 data-i18n="pr.2">Diskusi kebutuhan</h3><p data-i18n="pr.2p">Kami tanyakan lokasi, peralatan, dan tujuan Anda, lewat telepon atau kunjungan.</p></li>
           <li><span class="num num-l">3</span><h3 data-i18n="pr.3">Terima penawaran</h3><p data-i18n="pr.3p">Harga bisa dinego. Penawaran dibuat khusus untuk proyek Anda.</p></li>
@@ -322,12 +390,12 @@
 
     <section class="section grey" id="faq" aria-labelledby="faq-h">
       <div class="wrap faq">
-        <div class="faq-intro" data-reveal>
+        <div class="faq-intro">
           <h2 id="faq-h" data-i18n="faq.h">Pertanyaan</h2>
           <p data-i18n="faq.p">Belum menemukan jawaban? Chat kami langsung.</p>
           <a class="btn btn-red" href="https://wa.me/6282272226678" target="_blank" rel="noopener" data-i18n="nav.wa">Chat WhatsApp</a>
         </div>
-        <div class="faq-list" data-reveal>
+        <div class="faq-list">
           <details open><summary data-i18n="faq.1">Berapa biaya proyek atau kursus?</summary><p data-i18n="faq.1a">Harga bisa dinego dan tergantung lokasi serta kebutuhan Anda. Chat kami di WhatsApp dengan deskripsi singkat, dan kami balas dengan penawaran.</p></details>
           <details><summary data-i18n="faq.2">Di mana lokasi Anda?</summary><p data-i18n="faq.2a">Di Medan, Sumatera Utara. Sebutkan lokasi Anda saat menghubungi kami, dan kami jelaskan bagaimana kami bisa membantu.</p></details>
           <details><summary data-i18n="faq.3">Kapan kursus pelatihan dimulai?</summary><p data-i18n="faq.3a">Jadwal segera diumumkan. Chat kami untuk mendaftarkan minat, dan kami hubungi Anda saat tanggal sudah ditetapkan. Pelatihan untuk tim Anda sendiri bisa diatur sesuai permintaan.</p></details>
@@ -339,12 +407,12 @@
 
     <section class="cta" id="kontak" aria-labelledby="kontak-h">
       <div class="wrap cta-in">
-        <div class="cta-text" data-reveal>
+        <div class="cta-text">
           <h2 id="kontak-h" data-i18n="ct.h">Siap memulai proyek Anda?</h2>
           <p data-i18n="ct.p">Ceritakan kebutuhan Anda, dan kami balas dengan penawaran.</p>
-          <p class="cta-meta"><a href="tel:+6282272226678">+62 822-7222-6678</a> · <span data-i18n="ct.place">Medan, Sumatera Utara</span></p>
+          <p class="cta-meta"><a href="tel:+6282272226678">+62 822-7222-6678</a><br><span data-i18n="ct.place">Medan, Sumatera Utara</span></p>
         </div>
-        <form class="wa-form" action="https://wa.me/6282272226678" method="get" target="_blank" data-reveal>
+        <form class="wa-form" action="https://wa.me/6282272226678" method="get" target="_blank">
           <label class="field select">
             <span class="sr" data-i18n="ct.need">Apa yang Anda butuhkan?</span>
             <select name="need" id="need">
@@ -374,7 +442,8 @@
         </div>
         <div class="cols">
           <nav aria-label="Layanan" data-i18n-arialabel="nav.services"><h2 data-i18n="nav.services">Layanan</h2><a href="#layanan" data-i18n="svc.1">Solusi IoT</a><a href="#layanan" data-i18n="svc.2">Otomasi</a><a href="#pelatihan" data-i18n="svc.3">Pelatihan</a><a href="#layanan" data-i18n="svc.4">Konsultasi</a></nav>
-          <nav aria-label="Perusahaan" data-i18n-arialabel="ft.company"><h2 data-i18n="ft.company">Perusahaan</h2><a href="#portofolio" data-i18n="nav.portfolio">Portofolio</a><a href="#sektor" data-i18n="sec.h">Siapa yang kami bantu</a><a href="#proses" data-i18n="pr.h">Cara kami bekerja</a><a href="#faq" data-i18n="faq.h">Pertanyaan</a></nav>
+          <nav aria-label="Panduan" data-i18n-arialabel="ft.guides"><h2 data-i18n="ft.guides">Panduan</h2><a href="pelatihan-plc-iot-medan/" data-i18n="ft.g1">Pelatihan PLC &amp; IoT Medan</a><a href="jasa-iot-otomasi-medan/" data-i18n="ft.g2">Jasa IoT &amp; otomasi PLC Medan</a><a href="monitoring-kebun-sawit/" data-i18n="ft.g3">Monitoring kebun sawit</a></nav>
+          <nav aria-label="Perusahaan" data-i18n-arialabel="ft.company"><h2 data-i18n="ft.company">Perusahaan</h2><a href="#portofolio" data-i18n="nav.portfolio">Contoh sistem</a><a href="#sektor" data-i18n="sec.h">Siapa yang kami bantu</a><a href="#proses" data-i18n="pr.h">Cara kami bekerja</a><a href="#faq" data-i18n="faq.h">Pertanyaan</a></nav>
           <div><h2 data-i18n="ft.reach">Hubungi kami</h2><a href="tel:+6282272226678">+62 822-7222-6678</a><a href="https://wa.me/6282272226678" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/redtreeiot/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@redtreeiot" target="_blank" rel="noopener">TikTok</a><a href="https://www.google.com/maps/search/Medan,+North+Sumatra,+Indonesia" target="_blank" rel="noopener" data-i18n="ct.place">Medan, Sumatera Utara</a></div>
         </div>
       </div>
@@ -409,6 +478,6 @@
   </footer>
 
   <script src="i18n-en.js"></script>
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
