@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://redtreeiot.netlify.app/</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <image:image><image:loc>https://redtreeiot.netlify.app/assets/automatic-weather-station-learning.jpg</image:loc></image:image>
     <image:image><image:loc>https://redtreeiot.netlify.app/assets/aws-automatic-weather-station.jpg</image:loc></image:image>
     <image:image><image:loc>https://redtreeiot.netlify.app/assets/bma-automation-allen-bradley-plc-3.jpg</image:loc></image:image>
@@ -10,18 +10,17 @@
     <image:image><image:loc>https://redtreeiot.netlify.app/assets/newater-s-c-a-d-a-room.jpg</image:loc></image:image>
     <image:image><image:loc>https://redtreeiot.netlify.app/assets/oil-palm-plantation-in-rupit-north-musi.jpg</image:loc></image:image>
     <image:image><image:loc>https://redtreeiot.netlify.app/assets/plc-displej.jpg</image:loc></image:image>
-    <image:image><image:loc>https://redtreeiot.netlify.app/assets/solder-workshop-at-fixme-hackerspace-renens-lausanne.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://redtreeiot.netlify.app/pelatihan-plc-iot-medan/</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://redtreeiot.netlify.app/jasa-iot-otomasi-medan/</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://redtreeiot.netlify.app/monitoring-kebun-sawit/</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
 </urlset>

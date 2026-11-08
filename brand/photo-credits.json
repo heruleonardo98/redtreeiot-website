@@ -65,7 +65,7 @@
   "width": 1920,
   "height": 1488,
   "bytes": 549763,
-  "credit": "\"KITLV - 5949 - Stafhell & Kleingrothe - Medan - Ferry across the Wampu River near the oil\u00e2\u20ac\u00a6\" by Stafhell & Kleingrothe / Medan, public domain, via Wikimedia Commons",
+  "credit": "\"KITLV - 5949 - Stafhell & Kleingrothe - Medan - Ferry across the Wampu River near the oilâ€¦\" by Stafhell & Kleingrothe / Medan, public domain, via Wikimedia Commons",
   "notes": [],
   "saved": "2026-10-24T12:47:43.973Z"
  },
@@ -146,7 +146,7 @@
   "media": "image",
   "ref": "commons:75720539",
   "title": "Arduino UNO + HC-SR04 + HC 05 + breadboard - side view 01",
-  "creator": "Pradana Aumars ( talk \u00c2\u00b7 contribs )",
+  "creator": "Pradana Aumars ( talk Â· contribs )",
   "creatorUrl": null,
   "date": "2019-01-07",
   "license": "CC BY-SA 4.0",
@@ -159,7 +159,7 @@
   "width": 1920,
   "height": 1440,
   "bytes": 284967,
-  "credit": "\"Arduino UNO + HC-SR04 + HC 05 + breadboard - side view 01\" by Pradana Aumars ( talk \u00c2\u00b7 contribs ), CC BY-SA 4.0, via Wikimedia Commons",
+  "credit": "\"Arduino UNO + HC-SR04 + HC 05 + breadboard - side view 01\" by Pradana Aumars ( talk Â· contribs ), CC BY-SA 4.0, via Wikimedia Commons",
   "notes": [
    "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
   ],
@@ -306,30 +306,6 @@
    "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
   ],
   "saved": "2026-10-24T12:47:53.541Z"
- },
- {
-  "file": "assets/solder-workshop-at-fixme-hackerspace-renens-lausanne.jpg",
-  "media": "image",
-  "ref": "commons:42863461",
-  "title": "Solder workshop at FIXME Hackerspace, Renens, Lausanne (2015-05-23 06.25.10 by Mitch Altman)",
-  "creator": "Mitch Altman from San Francisco, USA",
-  "creatorUrl": null,
-  "date": "2015-05-23",
-  "license": "CC BY-SA 2.0",
-  "licenseCode": "by-sa",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-  "creditRequired": true,
-  "page": "https://commons.wikimedia.org/wiki/File:Solder_workshop_at_FIXME_Hackerspace,_Renens,_Lausanne_(2015-05-23_06.25.10_by_Mitch_Altman).jpg",
-  "via": "Wikimedia Commons",
-  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Solder_workshop_at_FIXME_Hackerspace%2C_Renens%2C_Lausanne_%282015-05-23_06.25.10_by_Mitch_Altman%29.jpg/1920px-Solder_workshop_at_FIXME_Hackerspace%2C_Renens%2C_Lausanne_%282015-05-23_06.25.10_by_Mitch_Altman%29.jpg",
-  "width": 1920,
-  "height": 1275,
-  "bytes": 413626,
-  "credit": "\"Solder workshop at FIXME Hackerspace, Renens, Lausanne (2015-05-23 06.25.10 by Mitch Altm\u00e2\u20ac\u00a6\" by Mitch Altman from San Francisco, USA, CC BY-SA 2.0, via Wikimedia Commons",
-  "notes": [
-   "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
-  ],
-  "saved": "2026-10-24T12:48:46.003Z"
  },
  {
   "file": "assets/smt-soldering-class-at-knox-makers.jpg",

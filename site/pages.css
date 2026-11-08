@@ -71,3 +71,7 @@
   .course-list li { flex-direction: column; gap: 8px; }
   .related-card { padding: 20px; }
 }
+
+/* training landing page: hero without a photo */
+.page-hero-solo .hero-in { grid-template-columns: 1fr; }
+.page-hero-solo .hero-text { max-width: 820px; }
