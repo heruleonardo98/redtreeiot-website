@@ -54,12 +54,15 @@ const STORIES = {
   },
   tangki: {
     dur: 14, sensor: 'tank', show: ['tank'],
-    tracks: { tank: [[0, 0.55], [6, 0.94], [8.6, 0.94], [12.5, 0.6], [14, 0.58]] },
+    tracks: {
+      tank: [[0, 0.55], [6, 0.94], [8.6, 0.94], [12.5, 0.6], [14, 0.58]],
+      tank1: [[0, 0.3], [8.6, 0.3], [12.5, 0.64], [14, 0.64]],
+    },
     at: { send: 5.4, alarm: 6.6, act: 8.6 },
   },
 };
 const ORDER = ['hujan', 'kemarau', 'tangki'];
-const DEFAULTS = { rain: 0, sun: 0, mm: 0, water: 0.45, soil: 44, tank: 0.55, gate: 0 };
+const DEFAULTS = { rain: 0, sun: 0, mm: 0, water: 0.45, soil: 44, tank: 0.55, tank1: 0.3, gate: 0 };
 const PACKET_MS = 1100;
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
@@ -96,6 +99,7 @@ export function initEstate(el, t) {
   const parts = {
     rain: $('.rain'), sun: $('.sun'), water: $('.canal-water'), dry: $('.dry'),
     tank: $('.tank-level'), gate: $('.gate-door'), packets: $('.packets'),
+    t1: $('.tank-liquid.t1'), t2: $('.tank-liquid.t2'),
   };
   const sensors = Object.fromEntries([...el.querySelectorAll('[data-sensor]')].map((g) => [g.dataset.sensor, g]));
   const callouts = Object.fromEntries([...el.querySelectorAll('[data-callout]')].map((g) => [g.dataset.callout, g]));
@@ -153,11 +157,22 @@ export function initEstate(el, t) {
     parts.water.setAttribute('y', (226 - h).toFixed(1));
     parts.water.setAttribute('height', h.toFixed(1));
     parts.dry.style.opacity = Math.min(Math.max((44 - v.soil) / 22, 0), 1).toFixed(2);
-    const th = 40 * v.tank;
-    parts.tank.setAttribute('y', (170 - th).toFixed(1));
+    const th = 46 * v.tank;
+    parts.tank.setAttribute('y', (169 - th).toFixed(1));
     parts.tank.setAttribute('height', th.toFixed(1));
     parts.gate.style.transform = `translateY(${(-18 * v.gate).toFixed(1)}px)`;
     el.classList.toggle('rainy', v.rain > 0.05);
+    // mill close-up (tank story): liquid levels, feed from the press, transfer pump
+    const liquid = (rect, level) => {
+      const lh = 197 * level;
+      rect.setAttribute('y', (317 - lh).toFixed(1));
+      rect.setAttribute('height', lh.toFixed(1));
+    };
+    liquid(parts.t1, v.tank1);
+    liquid(parts.t2, v.tank);
+    el.classList.toggle('mill-on', story === 'tangki');
+    el.classList.toggle('feeding', story === 'tangki' && time < 6);
+    el.classList.toggle('pumping', story === 'tangki' && time >= s.at.act && time < 12.5);
 
     const a = alarms(v);
     for (const [k, g] of Object.entries(sensors)) {

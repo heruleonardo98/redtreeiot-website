@@ -352,11 +352,10 @@ h3 { font-size: var(--h3); font-weight: 700; line-height: 1.3; letter-spacing: -
 .estate-map .lbl { fill: var(--muted); font: 600 11.5px "Plus Jakarta Sans", system-ui, sans-serif; }
 .gate rect { fill: var(--ink); }
 .gate .gate-door { fill: #8a929c; transition: transform .2s; }
-.mill rect, .mill > circle:not(.smoke) { fill: #fff; stroke: var(--ink); stroke-width: 1.6; }
-.mill path { fill: none; stroke: var(--line); stroke-width: 1.2; }
-.mill .chimney.chimney { fill: var(--ink); }
-.mill .tank-bed { fill: var(--line); stroke: none; }
-.mill .tank-level { fill: var(--ink); stroke: none; }
+.mill .mill-bld { fill: #fff; stroke: var(--ink); stroke-width: 1.6; stroke-linejoin: round; }
+.mill .chimney { fill: var(--ink); }
+.mill .mtank { fill: #fff; stroke: var(--ink); stroke-width: 1.6; }
+.mill .mtank-fill, .mill .tank-level { fill: #e9b949; }
 .smoke { fill: #c8cdd4; stroke: none; opacity: 0; animation: smoke 3.2s ease-out infinite; }
 .smoke.s2 { animation-delay: 1.6s; }
 @keyframes smoke { 0% { opacity: .7; transform: translate(0, 0) scale(.6); } 100% { opacity: 0; transform: translate(8px, -26px) scale(1.8); } }
@@ -479,3 +478,34 @@ h3 { font-size: var(--h3); font-weight: 700; line-height: 1.3; letter-spacing: -
   .values li { grid-template-columns: 44px minmax(0, 1fr); gap: 14px; }
   .values .icon { width: 44px; height: 44px; }
 }
+
+/* ---------- estate map: mill close-up for the tank story ---------- */
+.scene-mill { opacity: 0; visibility: hidden; transition: opacity .45s, visibility .45s; }
+.mill-on .scene-mill { opacity: 1; visibility: visible; }
+.mill-on .sensor.dim, .mill-on .callout:not(.on) { opacity: 0; }
+.mill-ground { fill: var(--grey); }
+.mill-title { fill: var(--ink); font: 700 15px "Plus Jakarta Sans", system-ui, sans-serif; }
+.press rect { fill: #fff; stroke: var(--ink); stroke-width: 1.6; }
+.press path { fill: none; stroke: var(--line); stroke-width: 1.4; }
+.tank-shell { fill: #fff; stroke: var(--ink); stroke-width: 1.8; }
+.tank-liquid { fill: #e9b949; }
+.tank-limit { stroke: var(--red); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.estate-map .limit-lbl { fill: var(--red-dark); }
+.pipe { fill: none; stroke: #b9c0c8; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.feeding .pipe.feed, .pumping .pipe.transfer { stroke: #e9b949; stroke-dasharray: 10 8; animation: flow .6s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -18; } }
+.pump circle { fill: #fff; stroke: var(--ink); stroke-width: 1.8; }
+.pump path { stroke: var(--ink); stroke-width: 1.8; stroke-linecap: round; transform-box: fill-box; transform-origin: center; }
+.pumping .pump circle { stroke: var(--red); }
+.pumping .pump path { stroke: var(--red); animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.usonic rect { fill: var(--ink); }
+
+@media (max-width: 699px) {
+  /* the map is drawn at ~55% scale on phones: larger label sizes keep it readable */
+  .estate-map .lbl { font-size: 17px; }
+  .block-names text { font-size: 16px; }
+  .callout text { font-size: 14px; }
+  .mill-title { font-size: 20px; }
+}
+.estate:not(.mill-on) [data-sensor="tank"], .estate:not(.mill-on) [data-callout="tank"] { opacity: 0; }
