@@ -1,0 +1,21 @@
+{
+  "name": "RedTree IoT · IoT & otomasi Medan",
+  "short_name": "RedTree IoT",
+  "description": "Solusi, pelatihan, dan konsultasi IoT & otomasi untuk perkebunan, pabrik sawit, gedung, dan sekolah di Medan.",
+  "lang": "id",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Pelatihan PLC & IoT", "url": "/pelatihan-plc-iot-medan/", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Jasa IoT & otomasi", "url": "/jasa-iot-otomasi-medan/", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Monitoring kebun sawit", "url": "/monitoring-kebun-sawit/", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
