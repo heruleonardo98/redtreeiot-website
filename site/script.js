@@ -103,3 +103,10 @@ form?.addEventListener('submit', (e) => {
   msg += t('wa.ask');
   window.open(`${WA}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
 });
+
+// Offline support and faster repeat visits (see sw.js)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch((err) => console.warn('Service worker not registered:', err));
+  });
+}

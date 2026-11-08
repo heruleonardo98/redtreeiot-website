@@ -7,11 +7,15 @@ Company-profile site for RedTree IoT, an IoT & automation solutions, training an
 - `site/styles.css` – all styling; tokens in `:root`. Breakpoints: ≥1024 desktop, 700–1023 tablet, <700 phone, <360 small phone.
 - `site/script.js` – language toggle (stored in localStorage `rt-lang`), mobile menu, scroll reveals, WhatsApp message builder.
 - `site/sitemap.xml`, `site/robots.txt`, JSON-LD in `<head>` – update the sitemap `lastmod` and add new URLs when adding pages.
+- `site/estate.js` – hero estate map (simulated stories); `site/pages.css`/`pages.js` – landing pages.
+- PWA: `site/manifest.webmanifest`, `site/sw.js` (network-first pages/CSS/JS, cache-first images), `site/offline.html`, `site/icons/`. Bump `VERSION` in `sw.js` when its precache list changes.
+- Photos: every `assets/NAME.jpg` has `NAME-480.webp` and `NAME-960.webp`, used via `srcset`/`sizes`. Make both for any new photo.
 - `brand/` – logo SVGs and photo credits (`photo-credits.json`, Wikimedia Commons; credits are also listed in the site footer).
 
 ## Design rules
 - Bright design from Figma file "RedTree IoT – Website (Bright)": white ground, red `#E0301E` accent, ink `#1F2328`, tint `#FFF3F1`, grey `#F6F7F9`; font Plus Jakarta Sans (Google Fonts); rounded cards, pill buttons.
 - Must work from 320px to 2560px with no horizontal scroll; test both languages.
+- Accessibility: WCAG AA contrast, touch targets ≥44px on touch/small screens, respect reduced motion.
 - Plain static HTML/CSS/JS – no build step, no frameworks.
 
 ## Content rules

@@ -18,3 +18,10 @@
   });
   window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
 })();
+
+// Offline support and faster repeat visits (see sw.js)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch((err) => console.warn('Service worker not registered:', err));
+  });
+}
