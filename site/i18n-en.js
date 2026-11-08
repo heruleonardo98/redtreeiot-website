@@ -139,7 +139,6 @@ window.RT_EN = {
   "map.tangki.alarm": "CPO tank is almost full",
   "map.tangki.alarmBody": "Tank 2 level {v}",
   "map.tangki.act": "Operator transfers the tank contents",
-  "img.t": "Participants building circuits at workbenches during an electronics workshop",
   "tr.h": "Training",
   "tr.p": "Course schedules are coming soon. Message us to register your interest, or to book training for your own team.",
   "tr.1": "IoT fundamentals with ESP32",
