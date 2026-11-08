@@ -5,7 +5,7 @@ Company-profile site for RedTree IoT, an IoT & automation solutions, training an
 ## Structure
 - `site/index.html` – single page. Indonesian text is written in the HTML; English lives in `site/i18n-en.js`, keyed by `data-i18n="key"` (text) and `data-i18n-alt|placeholder|arialabel="key"` (attributes). Every new piece of visible text needs a key and an English entry.
 - `site/styles.css` – all styling; tokens in `:root`. Breakpoints: ≥1024 desktop, 700–1023 tablet, <700 phone, <360 small phone.
-- `site/script.js` – language toggle (stored in localStorage `rt-lang`), mobile menu, scroll reveals, WhatsApp message builder.
+- `site/script.js` – ES module: language toggle (stored in localStorage `rt-lang`), mobile menu, estate map setup, WhatsApp message builder, service worker registration.
 - `site/sitemap.xml`, `site/robots.txt`, JSON-LD in `<head>` – update the sitemap `lastmod` and add new URLs when adding pages.
 - `site/estate.js` – hero estate map (simulated stories); `site/pages.css`/`pages.js` – landing pages.
 - PWA: `site/manifest.webmanifest`, `site/sw.js` (network-first pages/CSS/JS, cache-first images), `site/offline.html`, `site/icons/`. Bump `VERSION` in `sw.js` when its precache list changes.
