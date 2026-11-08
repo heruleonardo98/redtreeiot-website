@@ -23,6 +23,7 @@ Company-profile site for RedTree IoT, an IoT & automation solutions, training an
 - Facts that are true: Medan location; WhatsApp +62 822-7222-6678 (`https://wa.me/6282272226678`); prices negotiable (never show prices); training courses "coming soon".
 - Never invent clients, testimonials, statistics, certifications, addresses or emails.
 - The photos are openly licensed Wikimedia images, not RedTree's own projects – never caption them as RedTree's work; credit any new photo in the footer list and `brand/photo-credits.json`.
+- `assets/proyek-*` (section `#proyek`) are the founder's own earlier work at other companies (palm oil industry, since 2021), shown with the owner's stated permission. Always describe them as "pengalaman pendiri", never as RedTree IoT client projects; the dashboard prototype uses simulated data and must keep saying so. Before adding any new project image, crop out IP addresses, URLs, browser bars, personal data and anything the owner has not cleared. The founder's name is not on the site (only visible inside the mentor certificate image); keep it that way unless the owner asks.
 - Primary language Indonesian (target: Medan / North Sumatra). Keep copy plain and local.
 
 ## Workflow
