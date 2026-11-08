@@ -2,12 +2,12 @@
 // Pages, CSS and JS are network-first (always fresh when online, cached copy offline),
 // so a new deploy never mixes new HTML with old scripts; photos, icons and fonts are cache-first.
 // Bump VERSION when the precache list changes.
-const VERSION = 'rt-v1';
+const VERSION = 'rt-v2';
 const CORE = `${VERSION}-core`;
 const RUNTIME = `${VERSION}-runtime`;
 const PRECACHE = [
   '/', '/offline.html', '/styles.css', '/pages.css', '/script.js', '/estate.js', '/pages.js',
-  '/i18n-en.js', '/favicon.svg', '/icons/icon-192.png',
+  '/i18n-en.js', '/wa-float.js', '/favicon.svg', '/icons/icon-192.png',
 ];
 const MAX_RUNTIME = 60;
 

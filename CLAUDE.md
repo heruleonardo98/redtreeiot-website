@@ -8,6 +8,7 @@ Company-profile site for RedTree IoT, an IoT & automation solutions, training an
 - `site/script.js` – ES module: language toggle (stored in localStorage `rt-lang`), mobile menu, estate map setup, WhatsApp message builder, service worker registration.
 - `site/sitemap.xml`, `site/robots.txt`, JSON-LD in `<head>` – update the sitemap `lastmod` and add new URLs when adding pages.
 - `site/estate.js` – hero estate map (simulated stories); `site/pages.css`/`pages.js` – landing pages.
+- `site/wa-float.js` – floating WhatsApp button on every page (hidden over the hero and the contact band/footer).
 - PWA: `site/manifest.webmanifest`, `site/sw.js` (network-first pages/CSS/JS, cache-first images), `site/offline.html`, `site/icons/`. Bump `VERSION` in `sw.js` when its precache list changes.
 - Photos: every `assets/NAME.jpg` has `NAME-480.webp` and `NAME-960.webp`, used via `srcset`/`sizes`. Make both for any new photo.
 - `brand/` – logo SVGs and photo credits (`photo-credits.json`, Wikimedia Commons; credits are also listed in the site footer).
