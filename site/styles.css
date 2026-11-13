@@ -531,3 +531,20 @@ h3 { font-size: var(--h3); font-weight: 700; line-height: 1.3; letter-spacing: -
   .proj-body { padding: 18px 18px 22px; }
   .creds li { border-radius: 14px; }
 }
+
+/* ---------- sectors as a typographic list (no stock photos) ---------- */
+.sector-lines li { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 24px; align-items: center; padding: clamp(14px, 2vw, 22px) 0; border-top: 1px solid var(--line); }
+.sector-lines li:last-child { border-bottom: 1px solid var(--line); }
+.sector-lines h3 { font-size: clamp(1.75rem, 1.2rem + 2.6vw, 3.25rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; transition: color .2s, transform .3s var(--ease); }
+.sector-lines p { font-size: 1.0625rem; color: var(--muted); max-width: 36ch; }
+@media (hover: hover) { .sector-lines li:hover h3 { color: var(--red); transform: translateX(6px); } }
+@media (max-width: 699px) { .sector-lines li { grid-template-columns: 1fr; gap: 6px; } }
+
+/* ---------- featured project: one dominant real photo, the rest follow ---------- */
+.proj-feature { grid-column: span 2; grid-row: span 2; }
+.proj-feature img { flex: 1 1 auto; min-height: 280px; height: 100%; aspect-ratio: auto; }
+.proj-feature .proj-body { padding: 24px 28px 28px; gap: 8px; }
+.proj-feature h3 { font-size: clamp(1.375rem, 1.1rem + 1vw, 1.875rem); letter-spacing: -0.02em; }
+.proj-feature p { font-size: 1.0625rem; max-width: 52ch; }
+@media (max-width: 1023px) { .proj-feature { grid-row: auto; } .proj-feature img { flex: none; height: auto; min-height: 0; aspect-ratio: 16 / 9; } }
+@media (max-width: 699px) { .proj-feature { grid-column: auto; } .proj-feature img { aspect-ratio: 16 / 10; } .proj-feature .proj-body { padding: 18px 18px 22px; } }
