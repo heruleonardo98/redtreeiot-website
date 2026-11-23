@@ -64,3 +64,10 @@ Terasa seperti perusahaan teknik lokal yang bisa diajak bicara (Medan), bukan te
 - Tidak ada scroll horizontal dari 320px sampai 2560px, dalam bahasa Indonesia dan Inggris.
 - Setiap teks baru punya kunci `data-i18n` dan entri Inggris di `site/i18n-en.js`.
 - Kontras AA, fokus terlihat, gerak patuh `prefers-reduced-motion`.
+
+## Pola tambahan (upgrade visual)
+- `.mark`: garis penekanan merah statis (underline, bukan gradasi) pada satu frasa kunci judul; maksimal 2-3 di seluruh halaman.
+- `.flow-fig` (diagram sticky di `#alur`): sorotan tahap aktif berupa perubahan status tanpa transition; di bawah 1024px semua tahap tampil penuh.
+- `.step-n` (`#proses`, menu "Cara kerja"): angka langkah tipografis 2,5-3,5rem `--red-dark`, tanpa pil atau lingkaran; di >=1024px empat kolom `1.4fr 1fr 1fr 1fr`, tombol WhatsApp di langkah 1. Bagian ini berada setelah Proyek dan masuk menu (7 item).
+- `.pin`: penanda bernomor statis untuk anotasi foto (belum dipakai, menunggu teks dari pemilik).
+- `.copy`: tombol salin nomor; umpan balik berupa teks, tanpa gerak.

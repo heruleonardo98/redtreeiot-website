@@ -4,11 +4,12 @@
   const btn = document.querySelector('.wa-float');
   const hero = document.querySelector('.hero');
   const ends = [document.getElementById('kontak'), document.querySelector('.footer')].filter(Boolean);
+  const ctas = [...document.querySelectorAll('[data-wa-cta]')];
   if (!btn || !hero || !('IntersectionObserver' in window)) return;
 
-  const seen = new Map([[hero, true], ...ends.map((el) => [el, false])]);
+  const seen = new Map([[hero, true], ...ends.map((el) => [el, false]), ...ctas.map((el) => [el, false])]);
   const update = () => {
-    const show = !seen.get(hero) && !ends.some((el) => seen.get(el));
+    const show = !seen.get(hero) && !ends.some((el) => seen.get(el)) && !ctas.some((el) => seen.get(el));
     btn.classList.toggle('show', show);
     if (show) btn.removeAttribute('tabindex'); else btn.setAttribute('tabindex', '-1');
     btn.setAttribute('aria-hidden', String(!show));
@@ -18,5 +19,11 @@
     update();
   });
   [hero, ...ends].forEach((el) => io.observe(el));
+  // another red WhatsApp button is (mostly) on screen: hide the floating one
+  const ioCta = new IntersectionObserver((entries) => {
+    entries.forEach((e) => seen.set(e.target, e.isIntersecting));
+    update();
+  }, { threshold: 0.6 });
+  ctas.forEach((el) => ioCta.observe(el));
   update();
 })();

@@ -12,6 +12,11 @@ const ID = {
   'wa.project': ' Sektor atau proyek saya: {project}.',
   'wa.ask': ' Boleh minta penawarannya?',
   'wa.train': 'Halo RedTree IoT, saya ingin mendaftarkan minat untuk pelatihan.',
+  // TODO-PEMILIK: teks awal WhatsApp berikut usulan sementara; teks final menunggu pemilik (tanpa harga, tanpa janji waktu balas).
+  'wa.hero': 'Halo RedTree IoT, saya ingin bertanya tentang layanan Anda.', // TODO-PEMILIK: teks final (hero, nav, tombol melayang)
+  'wa.faq': 'Halo RedTree IoT, saya punya pertanyaan yang belum terjawab di situs.', // TODO-PEMILIK: teks final
+  'wa.proses': 'Halo RedTree IoT, kebutuhan saya: ', // TODO-PEMILIK: teks final (pengunjung melengkapi di akhir)
+  'ct.copied': 'Nomor disalin',
   'need.iot': 'solusi IoT', 'need.auto': 'otomasi', 'need.train': 'pelatihan', 'need.cons': 'konsultasi',
 };
 
@@ -54,6 +59,10 @@ const setLang = (lang) => {
   document.title = en && EN['meta.title'] ? EN['meta.title'] : base.title;
   if (metaDesc) metaDesc.content = en && EN['meta.desc'] ? EN['meta.desc'] : base.desc;
   menu?.setAttribute('aria-label', t(menu.getAttribute('aria-expanded') === 'true' ? 'menu.close' : 'menu.open'));
+  for (const a of document.querySelectorAll('[data-wa]')) {
+    const ctx = a.dataset.wa === 'nav' || a.dataset.wa === 'float' ? 'hero' : a.dataset.wa;
+    a.href = `${WA}?text=${encodeURIComponent(t(`wa.${ctx}`))}`;
+  }
   if (trainWa) trainWa.href = `${WA}?text=${encodeURIComponent(t('wa.train'))}`;
   try { localStorage.setItem('rt-lang', root.lang); } catch { /* private mode */ }
   document.dispatchEvent(new CustomEvent('rt:lang', { detail: root.lang }));
@@ -93,6 +102,28 @@ if (estateEl) initEstate(estateEl, t);
 setLang(root.getAttribute('data-lang-pending') === 'en' ? 'en' : 'id');
 document.querySelector('.lang')?.addEventListener('click', () => setLang(root.lang === 'id' ? 'en' : 'id'));
 
+// Flow story: mark the stage whose text is at the middle of the screen (desktop styles only dim the others)
+const flowFig = document.querySelector('.flow-fig');
+if (flowFig && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) flowFig.dataset.active = e.target.dataset.step;
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  document.querySelectorAll('.flow-steps [data-step]').forEach((li) => io.observe(li));
+}
+
+// Copy phone number: feedback is a text change next to the button
+for (const btn of document.querySelectorAll('[data-copy]')) {
+  const status = btn.nextElementSibling;
+  btn.addEventListener('click', async () => {
+    let msg;
+    try { await navigator.clipboard.writeText(btn.dataset.copy); msg = t('ct.copied'); } catch { msg = btn.dataset.copy; }
+    if (status) {
+      status.textContent = msg;
+      setTimeout(() => { status.textContent = ''; }, 4000);
+    }
+  });
+}
+
 // WhatsApp message builder
 const form = document.querySelector('.wa-form');
 form?.addEventListener('submit', (e) => {
@@ -103,6 +134,26 @@ form?.addEventListener('submit', (e) => {
   msg += t('wa.ask');
   window.open(`${WA}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
 });
+
+// Projects: on phones show the first four, the rest open with a button (all visible without JS)
+const projList = document.getElementById('proj-list');
+const projMore = document.querySelector('.proj-more');
+if (projList && projMore) {
+  const phone = window.matchMedia('(max-width: 699px)');
+  let opened = false;
+  const sync = () => {
+    projMore.hidden = !phone.matches || opened;
+    if (phone.matches && !opened) projList.setAttribute('data-collapsed', ''); else projList.removeAttribute('data-collapsed');
+  };
+  projMore.addEventListener('click', () => {
+    opened = true;
+    projMore.setAttribute('aria-expanded', 'true');
+    sync();
+    projList.querySelector('.proj-x h3')?.focus?.();
+  });
+  phone.addEventListener('change', sync);
+  sync();
+}
 
 // Offline support and faster repeat visits (see sw.js)
 if ('serviceWorker' in navigator) {

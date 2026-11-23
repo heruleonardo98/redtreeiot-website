@@ -2,7 +2,7 @@
 // Pages, CSS and JS are network-first (always fresh when online, cached copy offline),
 // so a new deploy never mixes new HTML with old scripts; photos, icons and fonts are cache-first.
 // Bump VERSION when the precache list changes.
-const VERSION = 'rt-v3';
+const VERSION = 'rt-v6';
 const CORE = `${VERSION}-core`;
 const RUNTIME = `${VERSION}-runtime`;
 const PRECACHE = [
@@ -45,7 +45,7 @@ const networkFirst = async (request) => {
     }
     return response;
   } catch {
-    const cached = await caches.match(request);
+    const cached = await caches.match(request, { ignoreSearch: true });
     if (cached) return cached;
     return request.mode === 'navigate' ? caches.match('/offline.html') : Response.error();
   }
