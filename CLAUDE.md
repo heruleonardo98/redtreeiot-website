@@ -14,6 +14,7 @@ Company-profile site for RedTree IoT, an IoT & automation solutions, training an
 - `brand/` – logo SVGs and photo credits (`photo-credits.json`, Wikimedia Commons; credits are also listed in the site footer).
 
 ## Design rules
+- **Baca `DESIGN.md` dulu** dan ikuti untuk semua halaman (warna, font, jarak, aturan susunan, gerak, larangan). Jika menambah atau mengubah gaya, ubah `DESIGN.md` bersama `:root` di `styles.css`.
 - Bright design from Figma file "RedTree IoT – Website (Bright)": white ground, red `#E0301E` accent, ink `#1F2328`, tint `#FFF3F1`, grey `#F6F7F9`; font Plus Jakarta Sans (Google Fonts); rounded cards, pill buttons.
 - Must work from 320px to 2560px with no horizontal scroll; test both languages.
 - Accessibility: WCAG AA contrast, touch targets ≥44px on touch/small screens, respect reduced motion.
